@@ -1,0 +1,5 @@
+/node_modules
+/node-attendance-system-api
+/react-attendance-system-teacher-site
+
+.env
