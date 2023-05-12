@@ -9,7 +9,15 @@ $ git clone git@github.com:tuanladev98/node-attendance-system-api.git
 $ git clone git@github.com:tuanladev98/react-attendance-system-teacher-site.git
 ```
 
-## Step 2: Build
+## Step 2: Touch environment file
+
+```
+$ cp .env.example .env
+```
+
+- Note: change value of environment variables you want to use.
+
+## Step 3: Build
 
 ```
 $ docker-compose build
