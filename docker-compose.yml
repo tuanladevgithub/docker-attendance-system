@@ -57,5 +57,35 @@ services:
     stdin_open: true
     tty: true
 
+  admin_site:
+    depends_on:
+      - db
+      - api
+    build:
+      context: "./react-attendance-system-admin-site"
+    env_file:
+      - "./.env"
+    environment:
+      - APP_PORT=$ADMIN_SITE_PORT
+    ports:
+      - $ADMIN_SITE_PORT:$ADMIN_SITE_PORT
+    stdin_open: true
+    tty: true
+
+  teacher_site:
+    depends_on:
+      - db
+      - api
+    build:
+      context: "./react-attendance-system-teacher-site"
+    env_file:
+      - "./.env"
+    environment:
+      - APP_PORT=$TEACHER_SITE_PORT
+    ports:
+      - $TEACHER_SITE_PORT:$TEACHER_SITE_PORT
+    stdin_open: true
+    tty: true
+
 volumes:
   db-data:
