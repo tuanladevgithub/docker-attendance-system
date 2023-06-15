@@ -47,6 +47,7 @@ services:
       - "./.env"
     environment:
       - APP_PORT=$API_PORT
+      - JWT_SECRET_KEY=$JWT_SECRET_KEY
       - MYSQL_HOST=db
       - MYSQL_PORT=3306
       - MYSQL_USERNAME=$MYSQL_USER
