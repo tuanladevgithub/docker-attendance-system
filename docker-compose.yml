@@ -88,5 +88,20 @@ services:
     stdin_open: true
     tty: true
 
+  student_site:
+    depends_on:
+      - db
+      - api
+    build:
+      context: "./react-attendance-system-student-site"
+    env_file:
+      - "./.env"
+    environment:
+      - APP_PORT=$STUDENT_SITE_PORT
+    ports:
+      - $STUDENT_SITE_PORT:$STUDENT_SITE_PORT
+    stdin_open: true
+    tty: true
+
 volumes:
   db-data:
