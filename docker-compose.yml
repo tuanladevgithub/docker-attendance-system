@@ -74,8 +74,6 @@ services:
 
   admin_site:
     depends_on:
-      - db
-      - redis_server
       - api
     build:
       context: "./react-attendance-system-admin-site"
@@ -90,8 +88,6 @@ services:
 
   teacher_site:
     depends_on:
-      - db
-      - redis_server
       - api
     build:
       context: "./react-attendance-system-teacher-site"
@@ -106,8 +102,6 @@ services:
 
   student_site:
     depends_on:
-      - db
-      - redis_server
       - api
     build:
       context: "./react-attendance-system-student-site"
