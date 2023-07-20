@@ -13,7 +13,7 @@ services:
       - MYSQL_DATABASE=$MYSQL_DATABASE
       - TZ=Asia/Ho_Chi_Minh
     ports:
-      - $MYSQL_HOST_PORT:3306
+      - $MYSQL_PORT:3306
     volumes:
       - db-data:/var/lib/mysql
     command:
@@ -65,8 +65,13 @@ services:
       - MYSQL_PASSWORD=$MYSQL_PASSWORD
       - MYSQL_DATABASE=$MYSQL_DATABASE
       - REDIS_HOST=redis_server
-      - REDIS_PORT=$REDIS_PORT
+      - REDIS_PORT=6379
       - REDIS_PASSWORD=$REDIS_PASSWORD
+      - SMTP_HOST=$SMTP_HOST
+      - SMTP_PORT=$SMTP_PORT
+      - SMTP_AUTH_USER=$SMTP_AUTH_USER
+      - SMTP_AUTH_PASS=$SMTP_AUTH_PASS
+      - SENDER_EMAIL=$SENDER_EMAIL
     ports:
       - $API_PORT:$API_PORT
     stdin_open: true
