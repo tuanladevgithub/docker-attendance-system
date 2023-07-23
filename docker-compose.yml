@@ -59,6 +59,7 @@ services:
     environment:
       - APP_PORT=$API_PORT
       - JWT_SECRET_KEY=$JWT_SECRET_KEY
+      - STUDENT_SITE_DOMAIN=$STUDENT_SITE_DOMAIN
       - MYSQL_HOST=db
       - MYSQL_PORT=3306
       - MYSQL_USERNAME=$MYSQL_USER
